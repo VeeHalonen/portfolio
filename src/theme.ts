@@ -10,7 +10,7 @@ const bg = "#eceff1";
 export const lightPrimary = "#90a4ae";
 const drawerWidth = 240;
 
-export const useStyles = makeStyles((theme) =>
+export const getDesktopStyles = makeStyles((theme) =>
   createStyles({
     root: {
       display: "flex",
@@ -19,11 +19,47 @@ export const useStyles = makeStyles((theme) =>
       width: `calc(100% - ${drawerWidth}px)`,
       marginLeft: drawerWidth,
     },
-    toolbar: theme.mixins.toolbar,
+    // toolbar: theme.mixins.toolbar,
+    toolbar: {},
     content: {
       flexGrow: 1,
       backgroundColor: theme.palette.background.default,
       padding: theme.spacing(3),
+    },
+    drawer: {
+      width: drawerWidth,
+      flexShrink: 0,
+    },
+    drawerPaper: {
+      width: drawerWidth,
+    },
+  })
+);
+
+export const getMobileStyles = makeStyles((theme) =>
+  createStyles({
+    root: {
+      // display: "flex",
+    },
+    appBar: {
+      // width: `calc(100% - ${drawerWidth}px)`,
+      // marginLeft: drawerWidth,
+    },
+    // toolbar: theme.mixins.toolbar,
+    toolbar: {
+      width: "100%",
+    },
+    content: {
+      flexGrow: 1,
+      backgroundColor: theme.palette.background.default,
+      // padding: theme.spacing(3),
+    },
+    drawer: {
+      width: drawerWidth,
+      flexShrink: 0,
+    },
+    drawerPaper: {
+      width: drawerWidth,
     },
   })
 );
@@ -95,13 +131,9 @@ const theme = createMuiTheme({
       // },
     },
     MuiDrawer: {
-      root: {
-        width: drawerWidth,
-        flexShrink: 0,
-      },
       paper: {
         background: lightPrimary,
-        width: drawerWidth,
+        // width: drawerWidth,
         color: "white",
       },
     },
