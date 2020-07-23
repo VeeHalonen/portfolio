@@ -19,13 +19,13 @@ export const getDesktopStyles = makeStyles((theme) =>
       width: `calc(100% - ${drawerWidth}px)`,
       marginLeft: drawerWidth,
     },
-    // toolbar: theme.mixins.toolbar,
-    toolbar: {},
+    toolbar: theme.mixins.toolbar,
     content: {
       flexGrow: 1,
       backgroundColor: theme.palette.background.default,
       padding: theme.spacing(3),
     },
+
     drawer: {
       width: drawerWidth,
       flexShrink: 0,
@@ -33,26 +33,25 @@ export const getDesktopStyles = makeStyles((theme) =>
     drawerPaper: {
       width: drawerWidth,
     },
+    // For mobile only
+    appBarShift: {},
+    menuButton: {},
+    hide: {},
+    drawerHeader: {},
+    contentShift: {},
   })
 );
 
 export const getMobileStyles = makeStyles((theme) =>
   createStyles({
     root: {
-      // display: "flex",
+      display: "flex",
     },
     appBar: {
-      // width: `calc(100% - ${drawerWidth}px)`,
-      // marginLeft: drawerWidth,
-    },
-    // toolbar: theme.mixins.toolbar,
-    toolbar: {
-      width: "100%",
-    },
-    content: {
-      flexGrow: 1,
-      backgroundColor: theme.palette.background.default,
-      // padding: theme.spacing(3),
+      transition: theme.transitions.create(["margin", "width"], {
+        easing: theme.transitions.easing.sharp,
+        duration: theme.transitions.duration.leavingScreen,
+      }),
     },
     drawer: {
       width: drawerWidth,
@@ -60,6 +59,11 @@ export const getMobileStyles = makeStyles((theme) =>
     },
     drawerPaper: {
       width: drawerWidth,
+    },
+    toolbar: theme.mixins.toolbar,
+    content: {
+      flexGrow: 1,
+      padding: theme.spacing(1),
     },
   })
 );
@@ -119,6 +123,7 @@ const theme = createMuiTheme({
       root: {
         "&$selected": {
           backgroundColor: primary,
+          color: "white",
           "&:hover": {
             backgroundColor: primary,
           },

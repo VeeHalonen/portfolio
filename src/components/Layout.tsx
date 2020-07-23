@@ -7,7 +7,11 @@ import {
   ListItemIcon,
   Card,
   CardMedia,
+  Grid,
+  IconButton,
+  Paper,
 } from "@material-ui/core";
+import MenuIcon from "@material-ui/icons/Menu";
 import Content from "./Content";
 import { getMobileStyles, getDesktopStyles } from "../theme";
 import { Pages } from "../helpers";
@@ -17,12 +21,30 @@ const Layout = (props: { mobile: Boolean }) => {
   const classes = props.mobile ? getMobileStyles() : getDesktopStyles();
 
   const [page, setPage] = useState(Pages.Info);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(true);
+
+  const toggleMenu = () => {
+    setMobileMenuOpen(!mobileMenuOpen);
+    window.scrollTo(0, 0);
+  };
 
   return (
     <div className={classes.root}>
+      {/* Top nav */}
       <AppBar position="fixed" className={classes.appBar}>
         <Toolbar>
-          {/* KESKEN - button to open navbar */}
+          {/* Mobile navbar button */}
+          {props.mobile && (
+            <IconButton
+              edge="start"
+              style={{ marginRight: 10 }}
+              color="inherit"
+              aria-label="menu"
+              onClick={toggleMenu}
+            >
+              <MenuIcon />
+            </IconButton>
+          )}
           <Typography variant="h6" noWrap style={{ marginLeft: 30 }}>
             {page !== Pages.Info && page}
             {page === Pages.Info && "Veera Halonen"}
@@ -30,6 +52,7 @@ const Layout = (props: { mobile: Boolean }) => {
         </Toolbar>
       </AppBar>
 
+      {/* Desktop side menu */}
       {!props.mobile && (
         <Drawer
           variant="permanent"
@@ -52,20 +75,31 @@ const Layout = (props: { mobile: Boolean }) => {
           />
         </Drawer>
       )}
-      {props.mobile && (
-        <Drawer variant="permanent" anchor="top" className={classes.drawer}>
-          <MenuContents
-            page={page}
-            onSetPage={(newPage) => {
-              setPage(newPage);
-            }}
-          />
-        </Drawer>
-      )}
-      <main className={classes.content}>
+
+      <Grid container direction="column">
         <div className={classes.toolbar} />
-        <Content page={page} />
-      </main>
+
+        {/* Mobile menu */}
+        {props.mobile && mobileMenuOpen && (
+          <Grid item>
+            <Paper style={{ margin: 0 }}>
+              <MenuContents
+                page={page}
+                onSetPage={(newPage) => {
+                  setPage(newPage);
+                }}
+              />
+            </Paper>
+          </Grid>
+        )}
+
+        {/* Content */}
+        <Grid item>
+          <main className={classes.content}>
+            <Content page={page} />
+          </main>
+        </Grid>
+      </Grid>
     </div>
   );
 };
