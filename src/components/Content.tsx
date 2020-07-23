@@ -1,25 +1,21 @@
-import React, { Component } from "react";
-import { Paper, Typography } from "@material-ui/core";
-import { Pages } from "../helpers";
+import React from "react";
+import { Paper } from "@material-ui/core";
+import { Pages } from "../helpers/pages";
+import Info from "./content/Info";
+import Mandarin from "./content/Mandarin";
+import InteractiveStory from "./content/InteractiveStory";
 
 const Content = ({ page }: any) => {
   if (!page) return null;
-
   return (
-    <React.Fragment>
+    <>
       <Paper style={{ padding: 50 }}>
-        <Typography>
-          {page === Pages.Info &&
-            "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do \
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Rhoncus \
-          dolor purus non enim praesent elementum facilisis leo vel. Risus at \
-          ultrices mi tempus imperdiet."}
-          {page === Pages.Test &&
-            "Consequat mauris nunc congue nisi vitae suscipit. Fringilla est \
-          ullamcorper eget nulla facilisi etiam dignissim diam."}
-        </Typography>
+        {/* "PAGES" */}
+        {page === Pages.Info && <Info />}
+        {page === Pages.Mandarin && <Mandarin />}
+        {page === Pages.InteractiveStory && <InteractiveStory />}
       </Paper>
-    </React.Fragment>
+    </>
   );
 };
 

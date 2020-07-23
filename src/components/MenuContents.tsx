@@ -1,28 +1,32 @@
 import React from "react";
 import { ListItem, List, ListItemText, ListItemIcon } from "@material-ui/core";
-import InboxIcon from "@material-ui/icons/MoveToInbox";
-import MailIcon from "@material-ui/icons/Mail";
-import { Pages } from "../helpers";
+import PersonIcon from "@material-ui/icons/Person";
+import CodeIcon from "@material-ui/icons/Code";
+import { Page, Pages } from "../helpers/pages";
 
 const MenuContents = (props: {
-  page: Pages;
-  onSetPage: (arg0: Pages) => void;
+  page: Page;
+  onSetPage: (arg0: any) => void;
 }) => {
   return (
     <List>
-      {Object.values(Pages).map((text, index) => (
+      {Object.values(Pages).map((page) => (
         <ListItem
           button
-          key={text}
-          selected={text === props.page}
+          key={page.menuTitle}
+          selected={page.menuTitle === props.page.menuTitle}
           onClick={() => {
-            props.onSetPage(text);
+            props.onSetPage(page);
           }}
         >
           <ListItemIcon>
-            {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
+            {page.menuTitle === Pages.Info.menuTitle ? (
+              <PersonIcon />
+            ) : (
+              <CodeIcon />
+            )}
           </ListItemIcon>
-          <ListItemText primary={text} />
+          <ListItemText primary={page.menuTitle} />
         </ListItem>
       ))}
     </List>

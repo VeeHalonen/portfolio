@@ -25,7 +25,6 @@ export const getDesktopStyles = makeStyles((theme) =>
       backgroundColor: theme.palette.background.default,
       padding: theme.spacing(3),
     },
-
     drawer: {
       width: drawerWidth,
       flexShrink: 0,
@@ -33,12 +32,6 @@ export const getDesktopStyles = makeStyles((theme) =>
     drawerPaper: {
       width: drawerWidth,
     },
-    // For mobile only
-    appBarShift: {},
-    menuButton: {},
-    hide: {},
-    drawerHeader: {},
-    contentShift: {},
   })
 );
 
@@ -70,7 +63,6 @@ export const getMobileStyles = makeStyles((theme) =>
 
 const theme = createMuiTheme({
   palette: {
-    // primary: blueGrey,
     primary: {
       main: primary,
       contrastText: "white",
@@ -78,47 +70,12 @@ const theme = createMuiTheme({
     secondary: purple,
 
     background: {
-      // default: "#303030",
-      // default: "#D8BB9A",
-      // default: "#FFFAF0",
       default: bg,
     },
     type: "light",
   },
-  typography: {
-    h4: {
-      marginBottom: 20,
-      marginTop: 20,
-      //fontWeight: "bold",
-    },
-  },
+  typography: {},
   overrides: {
-    MuiTableRow: {
-      head: {
-        backgroundColor: "#212121",
-      },
-    },
-    MuiTableCell: {
-      head: {
-        color: "#fafafa",
-      },
-    },
-    MuiTableSortLabel: {
-      root: {
-        color: "#fafafa !important",
-        opacity: 1,
-      },
-      icon: {
-        color: "#999999 !important",
-      },
-    },
-    MuiFormLabel: {
-      root: {
-        "&$focused": {
-          color: "inherit",
-        },
-      },
-    },
     MuiListItem: {
       root: {
         "&$selected": {
@@ -138,7 +95,6 @@ const theme = createMuiTheme({
     MuiDrawer: {
       paper: {
         background: lightPrimary,
-        // width: drawerWidth,
         color: "white",
       },
     },

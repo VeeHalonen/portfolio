@@ -4,7 +4,6 @@ import {
   Toolbar,
   Typography,
   Drawer,
-  ListItemIcon,
   Card,
   CardMedia,
   Grid,
@@ -14,7 +13,7 @@ import {
 import MenuIcon from "@material-ui/icons/Menu";
 import Content from "./Content";
 import { getMobileStyles, getDesktopStyles } from "../theme";
-import { Pages } from "../helpers";
+import { Pages } from "../helpers/pages";
 import MenuContents from "./MenuContents";
 
 const Layout = (props: { mobile: Boolean }) => {
@@ -46,8 +45,7 @@ const Layout = (props: { mobile: Boolean }) => {
             </IconButton>
           )}
           <Typography variant="h6" noWrap style={{ marginLeft: 30 }}>
-            {page !== Pages.Info && page}
-            {page === Pages.Info && "Veera Halonen"}
+            {page.pageTitle}
           </Typography>
         </Toolbar>
       </AppBar>
@@ -64,7 +62,10 @@ const Layout = (props: { mobile: Boolean }) => {
         >
           <div>
             <Card>
-              <CardMedia component="img" image={require("../CodeDucks.png")} />
+              <CardMedia
+                component="img"
+                image={require("../assets/CodeDucks.png")}
+              />
             </Card>
           </div>
           <MenuContents
