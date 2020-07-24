@@ -27,6 +27,14 @@ const Layout = (props: { mobile: Boolean }) => {
     window.scrollTo(0, 0);
   };
 
+  const handlePageChange = (newPage: {
+    menuTitle: string;
+    pageTitle: string;
+  }) => {
+    setPage(newPage);
+    window.scrollTo(0, 0);
+  };
+
   return (
     <div className={classes.root}>
       {/* Top nav */}
@@ -71,7 +79,7 @@ const Layout = (props: { mobile: Boolean }) => {
           <MenuContents
             page={page}
             onSetPage={(newPage) => {
-              setPage(newPage);
+              handlePageChange(newPage);
             }}
           />
         </Drawer>
@@ -87,7 +95,7 @@ const Layout = (props: { mobile: Boolean }) => {
               <MenuContents
                 page={page}
                 onSetPage={(newPage) => {
-                  setPage(newPage);
+                  handlePageChange(newPage);
                 }}
               />
             </Paper>
