@@ -1,5 +1,5 @@
 import React from "react";
-import { Hidden } from "@material-ui/core";
+import { Hidden, Grid } from "@material-ui/core";
 import Layout from "./Layout";
 
 const MasterLayout = () => {

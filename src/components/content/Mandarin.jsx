@@ -104,10 +104,9 @@ function component(width, height, color, x, y, type) {
     if (type === "image") {
       try {
         ctx.drawImage(this.image, this.x, this.y, this.width, this.height);
-        // var img = document.getElementById("scream");
-        // ctx.drawImage(img, this.x, this.y, this.width, this.height);
       } catch (error) {
         // console.log(error);
+        ctx.fillRect(this.x, this.y, this.width, this.height);
       }
     } else {
       ctx.fillStyle = color;
@@ -175,8 +174,16 @@ function updateGameArea() {
 }
 
 const Mandarin = () => {
+  // Start on mount
   useEffect(() => {
     startGame();
+  }, []);
+
+  // Stop on unmount
+  useEffect(() => {
+    return () => {
+      myGameArea.stop();
+    };
   }, []);
 
   return (

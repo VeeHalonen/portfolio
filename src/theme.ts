@@ -4,10 +4,12 @@ import {
   createStyles,
 } from "@material-ui/core/styles";
 import purple from "@material-ui/core/colors/purple";
+import blueGrey from "@material-ui/core/colors/blueGrey";
 
 const primary = "#212B30";
-const bg = "#eceff1";
-export const lightPrimary = "#90a4ae";
+const bg = blueGrey[50];
+const lightPrimary = blueGrey[300];
+const midPrimary = blueGrey[500];
 const drawerWidth = 240;
 
 export const getDesktopStyles = makeStyles((theme) =>
@@ -96,6 +98,15 @@ const theme = createMuiTheme({
       paper: {
         background: lightPrimary,
         color: "white",
+      },
+    },
+    MuiLink: {
+      root: {
+        color: midPrimary,
+        fontWeight: "bold",
+        "&:hover": {
+          color: lightPrimary,
+        },
       },
     },
   },

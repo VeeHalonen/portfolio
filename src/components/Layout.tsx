@@ -19,7 +19,7 @@ import MenuContents from "./MenuContents";
 const Layout = (props: { mobile: Boolean }) => {
   const classes = props.mobile ? getMobileStyles() : getDesktopStyles();
 
-  const [page, setPage] = useState(Pages.Info);
+  const [page, setPage] = useState(Pages.InteractiveStory); // KESKEN
   const [mobileMenuOpen, setMobileMenuOpen] = useState(true);
 
   const toggleMenu = () => {
