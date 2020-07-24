@@ -135,17 +135,17 @@ function updateGameArea() {
 
   if (myGameArea.keys && myGameArea.keys[37]) {
     myGamePiece.image.src = require("../../assets/mandarina/mandarin3.png");
-    myGamePiece.speedX = -1;
+    myGamePiece.speedX = -2;
   }
   if (myGameArea.keys && myGameArea.keys[39]) {
     myGamePiece.image.src = require("../../assets/mandarina/mandarin2.png");
-    myGamePiece.speedX = 1;
+    myGamePiece.speedX = 2;
   }
   if (myGameArea.keys && myGameArea.keys[38]) {
-    myGamePiece.speedY = -1;
+    myGamePiece.speedY = -2;
   }
   if (myGameArea.keys && myGameArea.keys[40]) {
-    myGamePiece.speedY = 1;
+    myGamePiece.speedY = 2;
   }
 
   myGamePiece.newPos();
@@ -189,18 +189,18 @@ const Mandarin = () => {
   return (
     <>
       <Typography paragraph>
-        This was a birthday card to my partner meant as a quick re-introduction
-        to JavaScript as I had just started programming again after a long
-        break.
+        This little game was originally a birthday "card" to my partner and also
+        doubled as an exercise to reacquaint myself with what little JavaScript
+        I had once known.
       </Typography>
       <Typography paragraph>
-        A small coding exercise to reacquaint myself with JavaScript. Note that
-        the mobile drag has not been fully implemented and is glitchy at best on
-        most systems.
+        On Desktop, use the arrow keys to move. On mobile, dragging the orange
+        may or may not work, as that functionality has not yet been fully
+        implemented.
       </Typography>
-      <div>
+      <Typography paragraph>
         <canvas id="mandarinCanvas"></canvas>
-      </div>
+      </Typography>
     </>
   );
 };

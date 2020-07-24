@@ -1,13 +1,6 @@
 import React from "react";
-import { Typography, Card, CardMedia, Link } from "@material-ui/core";
-import {
-  img1,
-  img2,
-  img3,
-  img4,
-  img5,
-  img6,
-} from "../../assets/interactive-story";
+import { Typography, CardMedia, Link } from "@material-ui/core";
+import { img2, img3, img4, img5, img6 } from "../../assets/interactive-story";
 
 const Mandarin = () => {
   return (
