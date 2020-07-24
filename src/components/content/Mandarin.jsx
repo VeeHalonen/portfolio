@@ -189,6 +189,9 @@ const Mandarin = () => {
   return (
     <>
       <Typography paragraph>
+        <canvas id="mandarinCanvas"></canvas>
+      </Typography>
+      <Typography paragraph>
         This little game was originally a birthday "card" to my partner and also
         doubled as an exercise to reacquaint myself with what little JavaScript
         I had once known.
@@ -197,9 +200,6 @@ const Mandarin = () => {
         On Desktop, use the arrow keys to move. On mobile, dragging the orange
         may or may not work, as that functionality has not yet been fully
         implemented.
-      </Typography>
-      <Typography paragraph>
-        <canvas id="mandarinCanvas"></canvas>
       </Typography>
     </>
   );
