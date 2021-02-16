@@ -76,7 +76,11 @@ const theme = createMuiTheme({
     },
     type: "light",
   },
-  typography: {},
+  typography: {
+    h6: {
+      fontWeight: "bold",
+    },
+  },
   overrides: {
     MuiListItem: {
       root: {

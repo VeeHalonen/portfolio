@@ -4,3 +4,4 @@ export const img3 = require("./InteractiveStory03.png");
 export const img4 = require("./InteractiveStory04.png");
 export const img5 = require("./InteractiveStory05.png");
 export const img6 = require("./InteractiveStory06.png");
+export const moosrpg = require("./moosrpg2.zip");

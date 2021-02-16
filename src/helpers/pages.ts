@@ -8,6 +8,10 @@ export const Pages = {
     menuTitle: "Info",
     pageTitle: "Veera Halonen",
   },
+  Projektori: {
+    menuTitle: "Projektori",
+    pageTitle: "Projektori App (2020)",
+  },
   Mandarin: {
     menuTitle: "Mandarin Game",
     pageTitle: "Mandarin Game (2019)",

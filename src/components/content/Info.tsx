@@ -1,10 +1,15 @@
 import React from "react";
-import { Grid, Link } from "@material-ui/core";
+import { Grid, Link, Typography } from "@material-ui/core";
 
 const Info = () => {
   return (
     <>
       <Grid container direction="column" spacing={3}>
+        <Grid item>
+          <Typography variant="h6" paragraph>
+            Links
+          </Typography>
+        </Grid>
         <Grid item>
           <Link
             href="https://github.com/VeeHalonen"
@@ -17,7 +22,7 @@ const Info = () => {
         </Grid>
         <Grid item>
           <Link
-            href="https://opintopolku.fi/koski/opinnot/58ab74d6153d4215a1de6522e4e902ba"
+            href="https://opintopolku.fi/koski/opinnot/8a186319ea5c48bd95236be7e1a6cdfb"
             variant="h6"
             underline="none"
             paragraph
