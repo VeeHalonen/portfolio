@@ -22,7 +22,7 @@ const Info = () => {
         </Grid>
         <Grid item>
           <Link
-            href="https://opintopolku.fi/koski/opinnot/8a186319ea5c48bd95236be7e1a6cdfb"
+            href="https://opintopolku.fi/koski/opinnot/f7cb0f475e0647219c6abc28f179f394"
             variant="h6"
             underline="none"
             paragraph
