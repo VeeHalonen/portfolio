@@ -32,10 +32,12 @@ const Projektori = () => {
       <Grid item>
         <Typography paragraph>
           This web app was developed during my two-part traineeship at the
-          Tampere University of Applied Sciences in summer and autumn 2020. I
+          Tampere University of Applied Sciences in summer and autumn 2020. The
+          app was intended to serve as a platform to connect TAMK students
+          looking for work or traineeships with projects looking for members. I
           was in charge of the frontend development, which was implemented with
-          Next.js and Material-UI with Apollo GraphQL being used to access the
-          database.
+          Next.js and Material-UI with Apollo GraphQL being used to interact
+          with the database.
         </Typography>
         <Typography>
           The link to a demo version of the website can be found below, but its
